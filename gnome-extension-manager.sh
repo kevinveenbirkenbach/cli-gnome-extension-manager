@@ -15,6 +15,7 @@ echo "Installing GNOME extension \"$extension_name\"..."
 
 if [ "$action_type" == "enable" ]; then
     if [ ! -z "$extension_repository_path" ]; then
+        echo "Generating extension based on $3"
         if [ -d "$extension_folder" ]; then
             if [ -d "$extension_folder.git" ]; then
                 echo "Pulling changes from git..."
