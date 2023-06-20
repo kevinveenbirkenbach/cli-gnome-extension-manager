@@ -7,7 +7,7 @@
 action_type="$1"
 extension_name="$2"
 extension_repository_path="$3"
-extension_folder="$HOME/.local/share/gnome-shell/extensions/$extension_repository_path/"
+extension_folder="$HOME/.local/share/gnome-shell/extensions/$extension_name/"
 
 echo "=== GNOME Extension Installer ==="
 
@@ -29,7 +29,7 @@ if [ "$action_type" == "enable" ]; then
         fi
         
         if [ -f "$extension_folder/Makefile" ]; then
-            tmp_extension_folder="/tmp/$extension_repository_path"
+            tmp_extension_folder="/tmp/$extension_name"
             mv "$extension_folder" "$tmp_extension_folder"
             echo "Compiling extension..."
             (cd "$tmp_extension_folder" && make install) || exit 1 "Compilation failed."
