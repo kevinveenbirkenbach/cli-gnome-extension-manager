@@ -1,0 +1,3 @@
+pacman:
+  - gnome-shell-extensions
+  - gnome-shell-extension-desktop-icons-ng 
